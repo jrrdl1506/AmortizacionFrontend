@@ -1,0 +1,37 @@
+<div class="cont-vert">
+
+    <div class="top-bar">
+        <div class="cont-logo">
+            <img src="/assets/logo.png" class="logo">
+            <legend>BANORTE</legend>
+        </div>
+        <div class="menu-bar">
+            <div>
+                <a [routerLink]="['/register']" >
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+               
+            </div>
+            <div>
+                <a [routerLink]="['/login']">
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div>
+                <a [routerLink]="['/home']">
+                    <i class="fa fa-table" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="amort-body">
+      
+        <router-outlet></router-outlet>
+    </div>
+    
+    
+    <div class="bottom-bar">
+    
+    </div>
+</div>

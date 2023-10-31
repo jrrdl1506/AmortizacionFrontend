@@ -1,6 +1,43 @@
 <h4>Tabla de amortizacion de prestamos</h4>
 <br>
+
+<form id="idForm" class="form-prestamo flex-prestamo hidden" 
+[formGroup]="prestamoForm" (ngSubmit)="altaPrestamo()">
+  <div class="tacha">
+    <strong (click)="closeForm()">X</strong>
+  </div>
+  <h2>Añadir un prestamo</h2>
+  <div >
+    <label>Periodo</label><br>
+    <input type="text" placeholder="Periodo" formControlName="periodo"  >
+  </div><br>
+  <div >
+    <label>Cuota</label><br>
+    <input type="text" placeholder="Interes"  formControlName="cuota">
+  </div><br>
+  <div >
+    <label>Interes</label><br>
+    <input type="text" placeholder="Capital" formControlName="interes">
+  </div><br>
+  <div >
+    <label>Capital</label><br>
+    <input type="text" placeholder="Saldo" formControlName="capital">
+  </div><br>
+  <div >
+    <label>Saldo</label><br>
+    <input type="text" placeholder="Saldo" formControlName="saldo">
+  </div><br>
+  <button class="btn btn-dark"  type="submit">Añadir</button>
+ 
+</form>
+<br>
+<div class="flex">
+  <button class="btn btn-dark" (click)="openForm()" >Añadir prestamo</button>
+</div>
+
+<br>
 <div class="cont">
+  
   <table class="table table-light table-striped">
     <thead>
       <tr>
@@ -12,32 +49,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+      <tr *ngFor="let prestamo of prestamos">
+        <th scope="row">{{prestamo.periodo}}</th>
+        <td>{{prestamo.cuota | currency:'MX'}}</td>
+        <td>{{prestamo.interes | currency:'MX'}}</td>
+        <td>{{prestamo.capital | currency:'MX'}}</td>
+        <td>{{prestamo.saldo | currency:'MX'}}</td>
       </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-      </tr>
-      
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-      </tr>
-      
-      
-      
-      
     </tbody>
   </table>
 </div>

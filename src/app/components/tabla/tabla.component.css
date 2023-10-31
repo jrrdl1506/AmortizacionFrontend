@@ -7,3 +7,48 @@ table{
     justify-content: center;
 }
 
+
+.flex{
+    display: flex;
+    margin-left: 8.5rem;
+}
+
+.flex-prestamo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   
+}
+
+.form-prestamo{
+    width: 600px;
+    padding: 50px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.334);
+    background-color: rgb(241, 240, 240);
+    position:absolute;
+ 
+    top: 50%; /* Mueve el elemento hacia abajo un 50% de la parte superior del contenedor principal */
+    left: 50%; /* Mueve el elemento hacia la derecha un 50% del ancho del contenedor principal */
+    transform: translate(-50%, -50%);
+    opacity: 1; /* Establece la opacidad inicial en 1 */
+    transition: opacity 0.2s ease-in;
+}
+
+.hidden{
+    opacity: 0;
+
+    pointer-events: none; 
+    transition: opacity 0.2s ease-in;
+}
+
+.tacha{
+    display: flex;
+    justify-content: right !important;
+    width: 100%;
+    
+}
+
+.tacha strong{
+    cursor: pointer;
+}
